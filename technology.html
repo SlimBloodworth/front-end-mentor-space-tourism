@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!--RESOURCES
+    https://github.com/LuisManuelGlz/space-tourism **
+https://scrimba.com/learn/spacetravel **
+ To make multipage links: https://scrimba.com/learn/spacetravel/tabs-setting-the-stage-co71f425b8bcbd7f8e2e78f22 ** -->
+
+
+    <title>Frontend Mentor | Space tourism website</title>
+    <!--     JAVASCRIPT LINK - defers the javascript unitl the page is done loading      -->
+    <script src="navigation.js" defer></script>
+    <script src="tabs.js" defer></script>
+
+</head>
+<!-------------
+    CHALLENGES
+    Use the utility classes we created to:
+    1. Hold the content in the middle of the page
+    2.Wrap the content in either a flex or a grid
+    3. Try changing the gap variable without modifying the originsl utlity class
+    4. Use the .sr-only class on a div and see what happens
+    -------------->
+
+<body class="tech">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+
+    <header class="primary-header flex">
+        <div>
+            <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+        </div>
+        <!---->
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+        <!---->
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a>
+                    <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="destination.html"><span aria-hidden="true">01</span>Destination</a>
+                        <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="crew.html"><span aria-hidden="true">02</span>Crew</a>
+                            <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology.html"><span aria-hidden="true">03</span>Technology</a>
+            </ul>
+        </nav>
+        <!--after is here-->
+    </header>
+    <main id="main" class="grid-container grid-container--tech flow">
+
+        <h1 class="numbered-title"><span aria-hidden="true">03</span> Space launch 101</h1>
+        <!--  TECHNOLOGY  -->
+        <!-- Numbers -->
+        <div class="number-indicators flex --ff-serif fs-600" role="tablist" aria-label="technology list">
+            <button aria-selected="true" aria-controls="spaceport-tab" role="tab" data-image="spaceport-image" tabindex="0">1<span class="sr-only">1</span></button>
+            <button aria-selected="false" aria-controls="vehicle-tab" role="tab" data-image="vehicle-image" tabindex="-1">2<span class="sr-only">2</span></button>
+            <button aria-selected="false" aria-controls="capsule-tab" role="tab" data-image="capsule-image" tabindex="-1">3<span class="sr-only">3</span></button>
+        </div>
+        <!--  spaceport  -->
+        <article class="tech-details flow" id="spaceport-tab" role="tabpanel" tabindex="0">
+            <header class="flow flow--space-small">
+                <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
+                <p class="fs-700 uppercase ff-serif">Spaceport</p>
+            </header>
+            <p>A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s
+                rotation for launch.</p>
+        </article>
+        <!--  vehicle  -->
+        <article hidden class="tech-details flow" id="vehicle-tab" role="tabpanel" tabindex="0">
+            <header class="flow flow--space-small">
+                <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
+                <p class="fs-700 uppercase ff-serif">Launch Vehicle</p>
+            </header>
+            <p>A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall,
+                it's quite an awe-inspiring sight on the launch pad!</p>
+        </article>
+        <!--  capsule  -->
+        <article hidden class="tech-details flow" id="capsule-tab" role="tabpanel" tabindex="0">
+            <header class="flow flow--space-small">
+                <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
+                <p class="fs-700 uppercase ff-serif">Space Capsule</p>
+            </header>
+            <p>A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty
+                of other activities to keep you entertained.</p>
+        </article>
+
+        <!-- allows easier image manipulation according to device screen -->
+
+        <!--  spaceport  -->
+
+        <picture id="spaceport-image">
+            <img src="assets/technology/image-spaceport-portrait.jpg" alt="Spaceport">
+        </picture>
+        <!--  vehicle  -->
+
+        <picture hidden id="vehicle-image">
+            <img src="assets/technology/image-launch-vehicle-portrait.jpg" alt="Launch Vehicle">
+        </picture>
+        <!--  capsule  -->
+
+        <picture hidden id="capsule-image">
+            <img src="assets/technology/image-space-capsule-portrait.jpg" alt="Capsule">
+        </picture>
+
+</body>
+
+</html>
